@@ -13,7 +13,47 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Bookmark Manager Website</title>
   </head>
-  <body>
-    <h1 class="text-3xl">Bookmark Manager Website</h1>
+  <body class="overflow-x-hidden">
+    <!-- Navbar Section -->
+    <!-- 1. relative since we will absolute-position the mobile menu overlay -->
+    <!-- relative to this containing block (content area of this block element) -->
+    <nav class="container relative mx-auto p-6">
+      <!-- Main Navbar Container -->
+      <!-- 1. on medium and larger screens, renders logo and links menu -->
+      <!-- 2. on mobile, renders logo and hamburger icon -->
+      <!-- 3. in both scenarios, we end up with a two flex items inside this flexbox -->
+      <!-- 4. in both scenarios, content stacks horizontally, so no need for flex-col -->
+      <div class="my-6 flex items-center justify-between space-x-20">
+        <!-- Logo -->
+        <!-- 1. renders on both mobile and medium-larger screens -->
+        <!-- 2. z-index: 20 so it stays on top of the mobile menu overlay when rendered -->
+        <!-- 3. NOTE: why z-index works on an <img> block, which defaults to position: static? -->
+        <!-- because a stacking context is formed on an element that is a child of a flex container -->
+        <img src="images/logo-bookmark.svg" alt="" id="logo" class="z-20" />
+        <!-- Links Menu -->
+        <!-- 1. hides on mobile; renders on medium and larger screens -->
+        <!-- 2. stacks horizontally -->
+        <!-- 3. four flex items: three links and a button -->
+        <div
+          class="hidden items-center space-x-10 uppercase text-grayish-blue md:flex"
+        >
+          <a href="#features" class="tracking-widest hover:text-soft-red"
+            >Features</a
+          >
+          <a href="#download" class="tracking-widest hover:text-soft-red"
+            >Download</a
+          >
+          <a href="#faq" class="tracking-widest hover:text-soft-red">FAQ</a>
+          <a
+            href="#"
+            class="rounded-lg border-2 border-soft-red bg-soft-red px-8 py-2 text-white shadow-md hover:bg-white hover:text-soft-red"
+          >
+            Login
+          </a>
+        </div>
+        <!-- TODO: Hamburger Icon -->
+      </div>
+      <!-- TODO: Mobile Menu Overlay Container -->
+    </nav>
   </body>
 </html>
