@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (min-width: 1020px) {
+@media screen(lg) {
   .bg-hero {
     @apply absolute top-52 rounded-l-full bg-soft-blue;
     height: 300px;
     left: 30%;
+    /* the reason why we have overflow-x-hidden on the <body> element */
+    width: 2000px;
+  }
+  .bg-tabs {
+    @apply absolute top-60 rounded-r-full bg-soft-blue;
+    height: 300px;
+    right: 60%;
     /* the reason why we have overflow-x-hidden on the <body> element */
     width: 2000px;
   }

@@ -127,5 +127,194 @@
         </div>
       </div>
     </section>
+    <!-- Features Heading Section -->
+    <section id="features">
+      <!-- Main Features Heading Container -->
+      <!-- 1. no content separates margin-top of this element (64px) and the parent's margin-top (0px), -->
+      <!-- so margin ends up outside of parent -->
+      <div class="container mx-auto mt-16 px-6">
+        <!-- Heading Text -->
+        <h2 class="mb-6 text-center text-4xl font-semibold">Features</h2>
+        <!-- Descriptive Text -->
+        <p class="mx-auto max-w-md text-center text-grayish-blue">
+          Our aim is to make it quick and easy for you to access your favourite
+          websites. Your bookmarks sync between your devices so you can access
+          them on the go.
+        </p>
+      </div>
+    </section>
+    <!-- Features (Dynamic) Tabs Section -->
+    <section id="tabs">
+      <!-- Main Feature Tabs Container -->
+      <!-- 1. margin collapsing occurs: 3rem worth of top margin -->
+      <!-- ends up outside of parent container -->
+      <!-- 2. relative since we will have an absolute-positioned background element -->
+      <!-- (has the .bg-tabs class on) -->
+      <!-- 3. three children: absolute background, tabs catalogue, and feature panels -->
+      <div class="container relative mx-auto mb-32 mt-12 px-6">
+        <!-- Feature Tabs Background -->
+        <div class="bg-tabs"></div>
+        <!-- Tabs Catalogue Container -->
+        <!-- 1. .flex.max-w-xl forces flex container to a width of 576px -->
+        <!-- 2. mx-auto centers the constrained flex container, so no need for justify-center -->
+        <!-- 3. three flex items: three tab containers -->
+        <div
+          class="mx-auto mb-6 flex max-w-xl flex-col border-b md:flex-row md:space-x-10"
+        >
+          <!-- Tab 1 Container -->
+          <!-- 1. .flex.justify-content needed to center <span> text on mobile -->
+          <!-- 2. md:w-1/3 since, on medium and larger screens, the three tabs span horizontally -->
+          <!-- TODO: implement javascript logic for custom data-target="panel-1" attribute -->
+          <!-- TODO: implement custom .tab class -->
+          <div
+            class="tab flex justify-center border-b text-center text-gray-600 hover:text-soft-red md:w-1/3 md:border-b-0"
+            data-target="panel-1"
+          >
+            <!-- Tab 1 Text -->
+            <!-- 1. .border-b-4.border-soft-red are classes to attach dynamically on the -->
+            <!-- currently active link -->
+            <!-- TODO: implement javascript logic for data-target="panel-1" -->
+            <span class="border-b-4 border-soft-red py-5" data-target="panel-1">
+              Simple Bookmarking
+            </span>
+          </div>
+          <!-- Tab 2 Container -->
+          <div
+            class="tab flex justify-center border-b text-center text-gray-600 hover:text-soft-red md:w-1/3 md:border-b-0"
+            data-target="panel-2"
+          >
+            <span class="py-5" data-target="panel-2"> Speedy Searching </span>
+          </div>
+          <!-- Tab 3 Container -->
+          <div
+            class="tab flex justify-center border-b text-center text-gray-600 hover:text-soft-red md:w-1/3 md:border-b-0"
+            data-target="panel-3"
+          >
+            <span class="py-5" data-target="panel-3"> Easy Sharing </span>
+          </div>
+        </div>
+        <!-- Feature Panels Container -->
+        <!-- 1. dynamically renders feature panels according to the currently selected -->
+        <!-- feature tab -->
+        <section id="panels" class="container mx-auto">
+          <!-- Panel 1 Container -->
+          <!-- 1. each panel container hosts two flex items: an image container and a -->
+          <!-- content container -->
+          <!-- TODO: implement custom .panel.panel-1 classes -->
+          <div
+            class="panel panel-1 flex flex-col py-5 md:flex-row md:space-x-7"
+          >
+            <!-- Panel 1 Image Container -->
+            <!-- 1. .flex.justify-center needed to center image on extra-large screens -->
+            <div class="flex justify-center md:w-1/2">
+              <!-- Panel 1 Image -->
+              <!-- 1. relative needed so image goes on top of .bg-tabs <div>; -->
+              <!-- this is the default z-index behavior (auto) -->
+              <img
+                src="images/illustration-features-tab-1.svg"
+                alt=""
+                class="relative"
+              />
+            </div>
+            <!-- Panel 1 Content Container -->
+            <!-- 1. flex items always stack vertically -->
+            <!-- 2. three flex items: a header, a paragraph, and a button -->
+            <!-- 3. md:items-start so flex items do not occupy full width of containing block; -->
+            <!-- this goes especially for the action button -->
+            <div
+              class="flex flex-col items-center space-y-8 md:w-1/2 md:items-start"
+            >
+              <!-- Panel 1 Header Text -->
+              <h3
+                class="mt-32 text-center text-3xl font-semibold md:mt-0 md:text-left"
+              >
+                Bookmark in one click
+              </h3>
+              <!-- Panel 1 Paragraph Text -->
+              <p
+                class="text-color max-w-md text-center text-grayish-blue md:text-left"
+              >
+                Organize your bookmarks however you like. Our simple
+                drag-and-drop interface gives you complete control over how you
+                manage your favourite sites.
+              </p>
+              <!-- Panel 1 Action Button -->
+              <a
+                href="#"
+                class="rounded-lg border-2 border-white bg-soft-blue px-6 py-3 font-semibold text-white hover:border-soft-blue hover:bg-white hover:text-soft-blue"
+              >
+                More Info
+              </a>
+            </div>
+          </div>
+          <!-- Panel 2 Container -->
+          <div
+            class="panel panel-2 flex hidden flex-col py-5 md:flex-row md:space-x-7"
+          >
+            <div class="flex justify-center md:w-1/2">
+              <img
+                src="images/illustration-features-tab-2.svg"
+                alt=""
+                class="relative"
+              />
+            </div>
+            <div
+              class="flex flex-col items-center space-y-8 md:w-1/2 md:items-start"
+            >
+              <h3
+                class="mt-14 text-center text-3xl font-semibold md:mt-0 md:text-left"
+              >
+                Intelligent search
+              </h3>
+              <p
+                class="text-color max-w-md text-center text-grayish-blue md:text-left"
+              >
+                Our powerful search feature will help you find saved sites in no
+                time at all. No need to trawl through all of your bookmarks.
+              </p>
+              <a
+                href="#"
+                class="rounded-lg border-2 border-white bg-soft-blue px-6 py-3 font-semibold text-white hover:border-soft-blue hover:bg-white hover:text-soft-blue"
+              >
+                More Info
+              </a>
+            </div>
+          </div>
+          <!-- Panel 3 Container -->
+          <div
+            class="panel panel-3 flex hidden flex-col py-5 md:flex-row md:space-x-7"
+          >
+            <div class="flex justify-center md:w-1/2">
+              <img
+                src="images/illustration-features-tab-3.svg"
+                alt=""
+                class="relative"
+              />
+            </div>
+            <div
+              class="flex flex-col items-center space-y-8 md:w-1/2 md:items-start"
+            >
+              <h3
+                class="mt-14 text-center text-3xl font-semibold md:mt-0 md:text-left"
+              >
+                Share your bookmarks
+              </h3>
+              <p
+                class="text-color max-w-md text-center text-grayish-blue md:text-left"
+              >
+                Easily share your bookmarks and collections with others. Create
+                a shareable a link that you can send at the click of a button.
+              </p>
+              <a
+                href="#"
+                class="rounded-lg border-2 border-white bg-soft-blue px-6 py-3 font-semibold text-white hover:border-soft-blue hover:bg-white hover:text-soft-blue"
+              >
+                More Info
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
   </body>
 </html>
