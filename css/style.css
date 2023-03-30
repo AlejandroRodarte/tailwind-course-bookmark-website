@@ -859,6 +859,10 @@ video {
   }
 }
 
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+
 .hover\:border-soft-blue:hover {
   --tw-border-opacity: 1;
   border-color: hsl(231 69% 60% / var(--tw-border-opacity));
@@ -923,6 +927,10 @@ video {
 
   .md\:border-b-0 {
     border-bottom-width: 0px;
+  }
+
+  .md\:border-b {
+    border-bottom-width: 1px;
   }
 
   .md\:text-left {

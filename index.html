@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
     <title>Bookmark Manager Website</title>
   </head>
   <!-- 1. overflow-x: hidden since we will have, in the hero section, -->
@@ -159,38 +160,40 @@
         <!-- 2. mx-auto centers the constrained flex container, so no need for justify-center -->
         <!-- 3. three flex items: three tab containers -->
         <div
-          class="mx-auto mb-6 flex max-w-xl flex-col border-b md:flex-row md:space-x-10"
+          class="mx-auto mb-6 flex max-w-xl flex-col md:flex-row md:space-x-10 md:border-b"
         >
           <!-- Tab 1 Container -->
           <!-- 1. .flex.justify-content needed to center <span> text on mobile -->
           <!-- 2. md:w-1/3 since, on medium and larger screens, the three tabs span horizontally -->
-          <!-- TODO: implement javascript logic for custom data-target="panel-1" attribute -->
-          <!-- TODO: implement custom .tab class -->
+          <!-- 3. .tab class is used to get query all tab elements on javascript code -->
+          <!-- 4. data-target="panel-1" is to link this tab with a panel that implements this same -->
+          <!-- name as a CSS class on out javascript code -->
           <div
-            class="tab flex justify-center border-b text-center text-gray-600 hover:text-soft-red md:w-1/3 md:border-b-0"
+            class="tab flex justify-center border-b text-center text-gray-600 hover:cursor-pointer hover:text-soft-red md:w-1/3 md:border-b-0"
             data-target="panel-1"
           >
             <!-- Tab 1 Text -->
             <!-- 1. .border-b-4.border-soft-red are classes to attach dynamically on the -->
             <!-- currently active link -->
-            <!-- TODO: implement javascript logic for data-target="panel-1" -->
-            <span class="border-b-4 border-soft-red py-5" data-target="panel-1">
+            <!-- 2. these classes are dynamically added/removed depending on what tab is -->
+            <!-- clicked by the user -->
+            <span class="border-b-4 border-soft-red py-5">
               Simple Bookmarking
             </span>
           </div>
           <!-- Tab 2 Container -->
           <div
-            class="tab flex justify-center border-b text-center text-gray-600 hover:text-soft-red md:w-1/3 md:border-b-0"
+            class="tab flex justify-center border-b text-center text-gray-600 hover:cursor-pointer hover:text-soft-red md:w-1/3 md:border-b-0"
             data-target="panel-2"
           >
-            <span class="py-5" data-target="panel-2"> Speedy Searching </span>
+            <span class="py-5"> Speedy Searching </span>
           </div>
           <!-- Tab 3 Container -->
           <div
-            class="tab flex justify-center border-b text-center text-gray-600 hover:text-soft-red md:w-1/3 md:border-b-0"
+            class="tab flex justify-center border-b text-center text-gray-600 hover:cursor-pointer hover:text-soft-red md:w-1/3 md:border-b-0"
             data-target="panel-3"
           >
-            <span class="py-5" data-target="panel-3"> Easy Sharing </span>
+            <span class="py-5"> Easy Sharing </span>
           </div>
         </div>
         <!-- Feature Panels Container -->
@@ -200,7 +203,9 @@
           <!-- Panel 1 Container -->
           <!-- 1. each panel container hosts two flex items: an image container and a -->
           <!-- content container -->
-          <!-- TODO: implement custom .panel.panel-1 classes -->
+          <!-- 2. .panel class is to query all panel elements on the javascript code -->
+          <!-- 3. .panel-1 class is to link this panel with its corresponding tab element -->
+          <!-- that has this same class name in its "data-target" attribute -->
           <div
             class="panel panel-1 flex flex-col py-5 md:flex-row md:space-x-7"
           >
@@ -249,7 +254,7 @@
           </div>
           <!-- Panel 2 Container -->
           <div
-            class="panel panel-2 flex hidden flex-col py-5 md:flex-row md:space-x-7"
+            class="panel panel-2 hidden flex-col py-5 md:flex-row md:space-x-7"
           >
             <div class="flex justify-center md:w-1/2">
               <img
@@ -282,7 +287,7 @@
           </div>
           <!-- Panel 3 Container -->
           <div
-            class="panel panel-3 flex hidden flex-col py-5 md:flex-row md:space-x-7"
+            class="panel panel-3 hidden flex-col py-5 md:flex-row md:space-x-7"
           >
             <div class="flex justify-center md:w-1/2">
               <img
