@@ -27,9 +27,11 @@ for (const tab of tabs.values()) {
   const panel = panelsCopy[panelIndex];
   // if this is the initially-selected panel (has a .flex class on it)
   // then populated the selectedPanel object with the selected tab and panel elements
+  // and decorate the <span> inside the selected tab with a red highlight
   if (panel.classList.contains('flex')) {
     selectedPanel.tab = tab;
     selectedPanel.panel = panel;
+    tab.querySelector('span').classList.add('border-b-4', 'border-soft-red');
   }
   // link the tab and found panel to the related feature id
   features[id] = {

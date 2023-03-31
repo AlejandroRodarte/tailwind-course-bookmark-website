@@ -177,9 +177,7 @@
             <!-- currently active link -->
             <!-- 2. these classes are dynamically added/removed depending on what tab is -->
             <!-- clicked by the user -->
-            <span class="border-b-4 border-soft-red py-5">
-              Simple Bookmarking
-            </span>
+            <span class="py-5"> Simple Bookmarking </span>
           </div>
           <!-- Tab 2 Container -->
           <div
@@ -199,7 +197,7 @@
         <!-- Feature Panels Container -->
         <!-- 1. dynamically renders feature panels according to the currently selected -->
         <!-- feature tab -->
-        <section id="panels" class="container mx-auto">
+        <div id="panels" class="container mx-auto">
           <!-- Panel 1 Container -->
           <!-- 1. each panel container hosts two flex items: an image container and a -->
           <!-- content container -->
@@ -318,7 +316,103 @@
               </a>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
+    <!-- Download Heading Section -->
+    <section id="download">
+      <div class="container mx-auto px-6">
+        <h2 class="mb-6 text-center text-3xl font-semibold md:text-4xl">
+          Download the extension
+        </h2>
+        <p class="mx-auto max-w-lg text-center text-grayish-blue">
+          We've got more browsers in the pipeline. Please do let us know if
+          you've got a favourite you'd like us to prioritize.
+        </p>
+      </div>
+    </section>
+    <!-- Download Boxes Section -->
+    <section id="download-boxes" class="py-32">
+      <!-- Main Download Boxes Container -->
+      <!-- 1. three flex items: three card for each browser extension (chrome, firefox, opera) -->
+      <div
+        class="mx-auto flex max-w-5xl flex-col items-center px-10 md:flex-row md:space-x-7 md:px-6"
+      >
+        <!-- Box 1: Chrome -->
+        <!-- 1. why is .w-full needed? in mobile, the parent has .flex-col.items-center applied; -->
+        <!-- .items-center shrinks the width of all flex items (you can say it "inlines them") so they -->
+        <!-- only occupy the space they need; .w-full enforces this flex item to occupy full width -->
+        <!-- 2. md:w-1/3 since three boxes will span horizontally on medium and larger screens -->
+        <!-- 3. flex items will always flow vertically -->
+        <!-- 4. four flex items: logo container, header text, paragraph text, and a dotted background with button -->
+        <div
+          class="flex w-full flex-col space-y-4 rounded-lg py-6 text-center shadow-lg md:w-1/3"
+        >
+          <!-- Logo Container -->
+          <!-- 1. thanks to .w-full applied to the flex container, this flex item -->
+          <!-- will occupy full width, so we need yet again to implement .flex.justify-center -->
+          <!-- to center the children of this element, which is the actual image -->
+          <div class="flex justify-center">
+            <!-- Logo Image-->
+            <img src="images/logo-chrome.svg" alt="" />
+          </div>
+          <!-- Header Text -->
+          <h5 class="pt-6 text-xl font-bold">Add to Chrome</h5>
+          <!-- Paragraph Text -->
+          <p class="text-gray-400">Minimum Version 62</p>
+          <!-- Action Button with dots on the top -->
+          <!-- 1. .bg-dots applies the background-image -->
+          <!-- 2. background-repeat: repeat-x so we have continous dots printed horizontally -->
+          <div class="bg-dots bg-repeat-x px-6 pt-6 capitalize">
+            <!-- Action Button -->
+            <!-- 1. make it block so we can force it to occupy fill width of containing block -->
+            <a
+              h
+              ref="#"
+              class="block w-full rounded-lg border-2 border-soft-blue bg-soft-blue py-3 text-white duration-200 hover:bg-white hover:text-soft-blue"
+            >
+              Add & Install Extension
+            </a>
+          </div>
+        </div>
+        <!-- Box 2: Firefox -->
+        <div
+          class="mt-10 flex w-full flex-col space-y-4 rounded-lg py-6 text-center shadow-lg md:mt-8 md:w-1/3"
+        >
+          <div class="flex justify-center">
+            <img src="images/logo-firefox.svg" alt="" />
+          </div>
+          <h5 class="pt-6 text-xl font-bold">Add to Firefox</h5>
+          <p class="text-gray-400">Minimum Version 55</p>
+          <div class="bg-dots bg-repeat-x px-6 pt-6 capitalize">
+            <a
+              h
+              ref="#"
+              class="block w-full rounded-lg border-2 border-soft-blue bg-soft-blue py-3 text-white duration-200 hover:bg-white hover:text-soft-blue"
+            >
+              Add & Install Extension
+            </a>
+          </div>
+        </div>
+        <!-- Box 3: Opera -->
+        <div
+          class="mt-10 flex w-full flex-col space-y-4 rounded-lg py-6 text-center shadow-lg md:mt-16 md:w-1/3"
+        >
+          <div class="flex justify-center">
+            <img src="images/logo-opera.svg" alt="" />
+          </div>
+          <h5 class="pt-6 text-xl font-bold">Add to Opera</h5>
+          <p class="text-gray-400">Minimum Version 46</p>
+          <div class="bg-dots bg-repeat-x px-6 pt-6 capitalize">
+            <a
+              h
+              ref="#"
+              class="block w-full rounded-lg border-2 border-soft-blue bg-soft-blue py-3 text-white duration-200 hover:bg-white hover:text-soft-blue"
+            >
+              Add & Install Extension
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </body>

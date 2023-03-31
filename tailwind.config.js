@@ -3,6 +3,10 @@ module.exports = {
   plugins: [],
   theme: {
     extend: {
+      backgroundImage: () => ({
+        // .bg-dots
+        dots: "url('../images/bg-dots.svg')"
+      }),
       colors: {
         'soft-blue': 'hsl(231, 69%, 60%)',
         'soft-red': 'hsl(0, 94%, 66%)',
