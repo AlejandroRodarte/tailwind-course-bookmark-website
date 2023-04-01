@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .ficon:hover {
+    filter: invert(53%) sepia(38%) saturate(3303%) hue-rotate(326deg)
+      brightness(101%) contrast(96%);
+  }
+}
+
 @media screen(lg) {
   .bg-hero {
     @apply absolute top-52 rounded-l-full bg-soft-blue;

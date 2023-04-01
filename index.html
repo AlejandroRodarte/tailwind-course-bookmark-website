@@ -590,5 +590,80 @@
         </div>
       </div>
     </section>
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="bg-soft-blue">
+      <!-- Main Newsletter Container -->
+      <!-- 1. three children: paragraph text, header text, and form container -->
+      <div class="mx-auto max-w-lg py-24">
+        <!-- Paragraph Text -->
+        <p
+          class="mb-6 text-center text-lg uppercase tracking-widest text-white"
+        >
+          35,000+ Already Joined
+        </p>
+        <!-- Header Text -->
+        <h2
+          class="mb-6 px-3 text-center text-3xl font-semibold text-white md:text-4xl"
+        >
+          Stay up-to-date with what we are doing!
+        </h2>
+        <!-- Form Container -->
+        <!-- 1. at this stage we will only limit the form width -->
+        <!-- 2. one children: an Input & Button Container -->
+        <form class="max-w-2xl px-6 text-base md:px-0">
+          <!-- Input & Button Container -->
+          <!-- 1. inputs will be totally centered -->
+          <div class="flex flex-col items-center justify-center md:flex-row">
+            <!-- Input Text -->
+            <input
+              class="border-1 mb-4 rounded-lg border-white px-6 pb-2 pt-3 focus:outline-none md:mb-0 md:mr-3"
+              placeholder="Enter your email address"
+              type="text"
+            />
+            <!-- Action Button -->
+            <input
+              class="transform cursor-pointer rounded-lg bg-soft-red px-6 py-3 text-center font-semibold text-white duration-200 hover:opacity-90 focus:outline-none"
+              type="submit"
+              value="Contact Us"
+            />
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-very-dark-blue py-16">
+      <!-- Main Footer Container -->
+      <!-- 1. two children: logo/links-menu container, and social media icons container -->
+      <!-- 2. on mobile, children stack vertically, and horizontally on medium and larger screens -->
+      <!-- 3. .container limits the width of the flex container -->
+      <div
+        class="container mx-auto flex flex-col items-center justify-between space-y-16 px-6 md:flex-row md:space-y-0"
+      >
+        <!-- Logo/Menu Container -->
+        <!-- 1. four children: a logo image, and three anchor links -->
+        <!-- 2. stacks vertically on mobile, horizontally on medium and larger screens -->
+        <div
+          class="flex flex-col items-center justify-between space-y-8 text-lg font-light text-grayish-blue md:flex-row md:space-x-14 md:space-y-0"
+        >
+          <img src="images/logo-bookmark-footer.svg" alt="" class="mb-1" />
+          <a href="#features" class="uppercase hover:text-soft-red">Features</a>
+          <a href="#download" class="uppercase hover:text-soft-red">Download</a>
+          <a href="#faq" class="uppercase hover:text-soft-red">FAQ</a>
+        </div>
+        <!-- Socials Container -->
+        <!-- 1. two children: facebook icon and twitter icon -->
+        <!-- 2. content always stacks horizontally -->
+        <div class="flex space-x-10">
+          <!-- Facebook Icon -->
+          <a href="#"
+            ><img src="images/icon-facebook.svg" alt="" class="ficon h-6"
+          /></a>
+          <!-- Twitter Icon -->
+          <a href="#"
+            ><img src="images/icon-twitter.svg" alt="" class="ficon h-6"
+          /></a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
