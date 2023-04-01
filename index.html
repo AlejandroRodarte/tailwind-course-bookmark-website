@@ -415,5 +415,180 @@
         </div>
       </div>
     </section>
+    <!-- FAQ Heading Section -->
+    <section id="faq">
+      <!-- Main FAQ Heading Container -->
+      <div class="container mx-auto">
+        <h2 class="mb-6 text-center text-3xl font-semibold md:text-4xl">
+          Frequently Asked Questions
+        </h2>
+        <p class="mx-auto max-w-lg px-6 text-center text-grayish-blue">
+          Here are some of our FAQs. If you have any other questions you'd like
+          answered please feel free to email us.
+        </p>
+      </div>
+    </section>
+    <!-- FAQ Accordion Section -->
+    <section id="faq-accordion">
+      <!-- Main FAQ Accordion Container -->
+      <div class="container mx-auto mb-32 px-6">
+        <!-- FAQ Tabs Container -->
+        <!-- NOTE: instructor implemented an .overflow-hidden class in this block; -->
+        <!-- this is NOT needed since each answer container, located on each tab container, -->
+        <!-- implements this class, hiding the overflowing paragraph text when the user -->
+        <!-- is not focusing on the mentioned tab -->
+        <div class="mx-auto my-8 max-w-2xl">
+          <!-- Tab 1 Container -->
+          <!-- 1. tabindex=<index> indicates if the element can be focusable -->
+          <!-- 2. two children: question and arrow container, -->
+          <!-- and answer container (hidden unless this container is focused) -->
+          <!-- 3. add .group class to alter children rulesets on hover: and focus: events -->
+          <!-- triggered on this block -->
+          <div class="group border-b py-1 outline-none" tabindex="1">
+            <!-- Question and Arrow Container for Tab 1 -->
+            <!-- NOTE: instructor added .group class here; this is NOT needed -->
+            <!-- since the parent of this element already implements it and we can style -->
+            <!-- everything inside it depending on its state -->
+            <!-- 1. two children: question text and arrow image -->
+            <div
+              class="flex cursor-pointer items-center justify-between py-3 text-gray-500 transition duration-500"
+            >
+              <!-- Question Text -->
+              <span class="transition duration-500 group-hover:text-red-500">
+                What is Bookmark?
+              </span>
+              <!-- Arrow Image -->
+              <div
+                class="transition duration-500 group-focus:-rotate-180 group-focus:text-red-500"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1 1l8 8 8-8"
+                  />
+                </svg>
+              </div>
+            </div>
+            <!-- Answer Container for Tab 1 -->
+            <!-- 1. when the tab is unfocused, simulate hiding answer by eliminating -->
+            <!-- block height with .h-0 (height: 0px) -->
+            <!-- 2. by applying .h-0, the <p> tag inside will try to overflow, -->
+            <!-- but .overflow-hidden prevents it -->
+            <!-- 3. when the tab is focused, h-auto will resize to fit the content of -->
+            <!-- the paragraph -->
+            <!-- SIDE-NOTE: .hidden and group-focus:block would also work -->
+            <!-- (does not need overflow-hidden) -->
+            <div
+              class="h-0 overflow-hidden transition duration-500 group-focus:h-auto"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
+                repellat amet doloribus consequuntur eos similique provident
+                tempora voluptates iure quia fuga dicta voluptatibus culpa
+                mollitia recusandae delectus id suscipit labore?
+              </p>
+            </div>
+          </div>
+          <!-- Tab 2 Container -->
+          <div class="group border-b py-1 outline-none" tabindex="2">
+            <div
+              class="flex cursor-pointer items-center justify-between py-3 text-gray-500 transition duration-500"
+            >
+              <span class="transition duration-500 group-hover:text-red-500">
+                How can I request a new browser?
+              </span>
+              <div
+                class="transition duration-500 group-focus:-rotate-180 group-focus:text-red-500"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1 1l8 8 8-8"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-0 overflow-hidden transition duration-500 group-focus:h-auto"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
+                repellat amet doloribus consequuntur eos similique provident
+                tempora voluptates iure quia fuga dicta voluptatibus culpa
+                mollitia recusandae delectus id suscipit labore?
+              </p>
+            </div>
+          </div>
+          <!-- Tab 3 Container -->
+          <div class="group border-b py-1 outline-none" tabindex="3">
+            <div
+              class="flex cursor-pointer items-center justify-between py-3 text-gray-500 transition duration-500"
+            >
+              <span class="transition duration-500 group-hover:text-red-500">
+                Is there a mobile app?
+              </span>
+              <div
+                class="transition duration-500 group-focus:-rotate-180 group-focus:text-red-500"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1 1l8 8 8-8"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-0 overflow-hidden transition duration-500 group-focus:h-auto"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
+                repellat amet doloribus consequuntur eos similique provident
+                tempora voluptates iure quia fuga dicta voluptatibus culpa
+                mollitia recusandae delectus id suscipit labore?
+              </p>
+            </div>
+          </div>
+          <!-- Tab 4 Container -->
+          <div class="group border-b py-1 outline-none" tabindex="2">
+            <div
+              class="flex cursor-pointer items-center justify-between py-3 text-gray-500 transition duration-500"
+            >
+              <span class="transition duration-500 group-hover:text-red-500">
+                What about other Chromium browsers?
+              </span>
+              <div
+                class="transition duration-500 group-focus:-rotate-180 group-focus:text-red-500"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1 1l8 8 8-8"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-0 overflow-hidden transition duration-500 group-focus:h-auto"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
+                repellat amet doloribus consequuntur eos similique provident
+                tempora voluptates iure quia fuga dicta voluptatibus culpa
+                mollitia recusandae delectus id suscipit labore?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
