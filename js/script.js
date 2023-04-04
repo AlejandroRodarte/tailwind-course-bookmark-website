@@ -1,3 +1,50 @@
+/**
+ * Hamburger Icon and Mobile Menu Overlay Logic
+ */
+// capture references to the header logo icon, hamburger icon, and mobile menu overlay elements
+const logo = document.getElementById('logo');
+const menuBtn = document.getElementById('menu-btn');
+const menu = document.getElementById('menu');
+
+// when opening mobile menu, add .open class to hamburger icon (transition to cross symbol),
+// change logo image so it contrasts better with background color, and make the mobile menu appear
+const openMobileMenu = () => {
+  menuBtn.classList.add('open');
+  logo.setAttribute('src', './images/logo-bookmark-footer.svg');
+  menu.classList.add('flex');
+  menu.classList.remove('hidden');
+};
+
+// when closing the mobile menu, remove .open class to hamburger icon (transition to hamburger symbol),
+// change logo image so it contrasts better with background color, and hide the mobile menu
+const closeMobileMenu = () => {
+  menuBtn.classList.remove('open');
+  logo.setAttribute('src', './images/logo-bookmark.svg');
+  menu.classList.remove('flex');
+  menu.classList.add('hidden');
+};
+
+// when hamburger icon is clicked, check, through the .open class presence,
+// if the mobile menu is open or not to determine course of action
+const onMenuBtnClick = () => {
+  const isMenuOpen = menuBtn.classList.contains('open');
+  if (isMenuOpen) closeMobileMenu();
+  else openMobileMenu();
+};
+
+// close mobile menu if width exceeds screen(md) threshold
+const resizeObserver = new ResizeObserver((entries) => {
+  const [bodyEntry] = entries;
+  if (bodyEntry.target.clientWidth >= 768) closeMobileMenu();
+});
+
+resizeObserver.observe(document.body);
+menuBtn.addEventListener('click', onMenuBtnClick);
+
+/**
+ * Tabs and Panels Logic
+ */
+
 // grab all tabs (all of them implement the .tab class)
 const tabs = document.querySelectorAll('.tab');
 // grab three panels (all of them implement the .panel class)
