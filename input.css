@@ -7,6 +7,57 @@
     filter: invert(53%) sepia(38%) saturate(3303%) hue-rotate(326deg)
       brightness(101%) contrast(96%);
   }
+  /* Hamburger Icon classes */
+  /* Rules for the parent hamburger container */
+  .hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    /* relative position since the children will be positioned as absolute */
+    position: relative;
+  }
+  /* Rules for the children of the hambuarger container (lines) */
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    /* they all start in the same position */
+    top: 0;
+    left: 0;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+  /* Rules for the middle hamburger line */
+  .hamburger-middle {
+    /* push it 7px down */
+    transform: translateY(7px);
+  }
+  /* Rules for the bottom hamburger line */
+  .hamburger-bottom {
+    /* push it 14px down */
+    transform: translateY(14px);
+  }
+  /* Rules to apply to the parent hamburger container when the "open" class is active */
+  .hamburger.open {
+    transform: rotate(90deg);
+  }
+  /* Rules to apply to the top line of the hamburger icon when the "open" class is active */
+  .hamburger.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+    background-color: #fff;
+  }
+  /* Rules to apply to the middle line of the hamburger icon when the "open" class is active */
+  .hamburger.open .hamburger-middle {
+    display: none;
+  }
+  /* Rules to apply to the bottom line of the hamburger icon when the "open" class is active */
+  .hamburger.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+    background-color: #fff;
+  }
 }
 
 @media screen(lg) {

@@ -549,8 +549,80 @@ video {
       brightness(101%) contrast(96%);
 }
 
+/* Hamburger Icon classes */
+
+/* Rules for the parent hamburger container */
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  /* relative position since the children will be positioned as absolute */
+  position: relative;
+}
+
+/* Rules for the children of the hambuarger container (lines) */
+
+.hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  /* they all start in the same position */
+  top: 0;
+  left: 0;
+  background: #000;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+/* Rules for the middle hamburger line */
+
+.hamburger-middle {
+  /* push it 7px down */
+  transform: translateY(7px);
+}
+
+/* Rules for the bottom hamburger line */
+
+.hamburger-bottom {
+  /* push it 14px down */
+  transform: translateY(14px);
+}
+
+/* Rules to apply to the parent hamburger container when the "open" class is active */
+
+.hamburger.open {
+  transform: rotate(90deg);
+}
+
+/* Rules to apply to the top line of the hamburger icon when the "open" class is active */
+
+.hamburger.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+  background-color: #fff;
+}
+
+/* Rules to apply to the middle line of the hamburger icon when the "open" class is active */
+
+.hamburger.open .hamburger-middle {
+  display: none;
+}
+
+/* Rules to apply to the bottom line of the hamburger icon when the "open" class is active */
+
+.hamburger.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  background-color: #fff;
+}
+
 .static {
   position: static;
+}
+
+.fixed {
+  position: fixed;
 }
 
 .absolute {
@@ -561,8 +633,28 @@ video {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
 .z-20 {
   z-index: 20;
+}
+
+.z-0 {
+  z-index: 0;
 }
 
 .mx-auto {
@@ -638,6 +730,10 @@ video {
 
 .h-auto {
   height: auto;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-full {
@@ -738,6 +834,27 @@ video {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
+.divide-x > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 0;
+  border-right-width: calc(1px * var(--tw-divide-x-reverse));
+  border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
+}
+
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+
+.divide-\[color\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: color;
+}
+
+.divide-gray-500 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-divide-opacity));
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -808,6 +925,11 @@ video {
 .bg-very-dark-blue {
   --tw-bg-opacity: 1;
   background-color: hsl(229 31% 21% / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-dots {
@@ -888,6 +1010,14 @@ video {
 
 .pb-2 {
   padding-bottom: 0.5rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
 }
 
 .pt-3 {
@@ -988,6 +1118,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.opacity-90 {
+  opacity: 0.9;
 }
 
 .shadow-lg {
@@ -1113,6 +1247,14 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:static {
+    position: static;
+  }
+
+  .md\:z-auto {
+    z-index: auto;
+  }
+
   .md\:mb-0 {
     margin-bottom: 0px;
   }
@@ -1135,6 +1277,10 @@ video {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:w-1\/2 {
